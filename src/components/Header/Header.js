@@ -4,11 +4,12 @@ import {Link} from "react-router-dom"
 function Header (){
     return (
             <nav> 
-                <p> <Link to="/"> Home </Link></p>
-                <p> <Link to="/favoritos"> Favoritos </Link></p>     {/* Faltan  */}
-                <p> <Link to="/populares"> Populares </Link></p>
-                <p> <Link to="/cartelera"> Cartelera </Link></p>
-
+                <ul> <Link to="/"> Home </Link></ul>
+                <ul> <Link to="/favoritos"> Favoritos </Link></ul>     {/* Faltan  */}
+                <ul> <Link to="/populares"> Populares </Link></ul>
+                <ul> <Link to="/cartelera"> Cartelera </Link></ul>
+                <div> <img className='logo' src='../img/logo.png'/>  </div>
+               
 
 
             </nav>

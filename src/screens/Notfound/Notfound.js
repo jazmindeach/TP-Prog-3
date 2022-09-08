@@ -3,7 +3,7 @@ import {Link} from "react-router-dom"
 
 function Notfound (){
     return (
-            <h1> No existe </h1>
+            <h1> Este es el Not found </h1>
 
     )
 }
