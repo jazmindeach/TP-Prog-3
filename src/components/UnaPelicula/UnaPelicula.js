@@ -32,7 +32,7 @@ class UnaPelicula extends Component{
           console.log(this.props)
           return(
                 <React.Fragment> 
-                    <Link> <img src={`https://image.tmdb.org/t/p/w342/${this.props.info.poster_path}`}/></Link>
+                    <Link to={`/detallePelicula/id/${this.props.info.id}`}> <img src={`https://image.tmdb.org/t/p/w342/${this.props.info.poster_path}`}/></Link>
                    
                    <h2> {this.props.info.title}</h2>
                    <p className={this.state.clase}> {this.props.info.overview}</p>
@@ -47,5 +47,6 @@ class UnaPelicula extends Component{
 
 
 }
+
 
 export default UnaPelicula

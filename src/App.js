@@ -21,7 +21,7 @@ function App() {
             <Route path="/populares" component={Populares} exact={true} /> 
             <Route path="/cartelera" component={Cartelera} exact={true}/> 
             <Route path="/favoritos" component={Favoritos} exact={true}/>
-            
+            <Route path="/detallePelicula/id/:id" component={DetallePelicula} />
             <Route path="" component={Notfound}/>
             
           

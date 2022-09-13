@@ -4,7 +4,7 @@ import ListadoTodas from "../../components/ListadoTodas/ListadoTodas"
 
 function Populares (){
     return (
-            <ListadoTodas /> 
+            <ListadoTodas populares={true} /> 
     )
 }
 export default Populares
