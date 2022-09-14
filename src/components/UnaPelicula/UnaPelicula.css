@@ -6,3 +6,33 @@
     display:block;
 }
 
+.unapelicula{
+    background-color: rgb(165, 151, 173);
+}
+
+.unapelicula img{
+        width: 342px; 
+        height: 513px;
+}
+
+.unapelicula h2{
+    font-size: 18px;
+    text-align: center;
+
+}
+
+#descripcion{
+    width: 342px; 
+    text-align: center;
+
+}
+
+.info p{
+    text-align:center;
+    width: 342px;
+
+   
+}
+
+
+ 

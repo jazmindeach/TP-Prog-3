@@ -1,0 +1,32 @@
+form{
+    
+    display: flex;
+    justify-content: center;
+    padding: 25px;
+}
+
+input{
+    width: 70%;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+#cargarmas{
+    display: flex;
+    justify-content: center;
+    padding: 25px;
+    
+}
+
+button{
+    width: 20%; 
+    height: 40%;
+}
+
+
+/*
+.contenedor{
+    background-color: black;
+} */
+
+

@@ -1,0 +1,21 @@
+.contenedor{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+
+.vertodas{
+    
+    text-align: center;
+    padding: 10px;
+    margin-top: 50px; 
+    
+}
+
+.vertodas a{
+    text-decoration: none;
+    background-color: rgb(152, 165, 224);
+    padding: 20px;
+}
