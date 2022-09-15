@@ -2,26 +2,31 @@ import React, { Component } from 'react'
 import UnaPelicula from '../UnaPelicula/UnaPelicula'
 import { Link } from 'react-router-dom'
 import "./Listado.css"
+import Loader from '../Loader/Loader'
 
 class Listado extends Component {
 
     constructor(props) {
         super(props)
         this.state = {
-            datos: []
+            datos: [],
+            cargando: true
         }
     }
     componentDidMount() {
         fetch(this.props.populares ? `https://api.themoviedb.org/3/movie/popular?api_key=627cbec155d5e3d21e03021421fffc3a` : `https://api.themoviedb.org/3/movie/now_playing?api_key=627cbec155d5e3d21e03021421fffc3a`)
             .then(response => response.json())
             .then(data => {
-                { this.setState({ datos: data.results }) }
+                { this.setState({ datos: data.results,cargando: false}) }
                 console.log(data)
             })
             .catch(error => console.log('El error fue: ' + error))
     }
 
     render() {
+        if (this.state.cargando) { 
+            return <Loader/>
+        }
         return (
             <React.Fragment>
                 <h1> {this.props.populares ? "Peliculas Populares" : "Películas en cartelera"} </h1>
@@ -31,7 +36,7 @@ class Listado extends Component {
 
                     }
                 </section>
-                <h2 className="vertodas"> <Link to={this.props.populares ? "/populares" : "/cartelera"}>  Ver todas las {this.props.populares ? "Peliculas Populares" : "Películas en cartelera"}</Link></h2>
+                <h2 className="vertodas"> <Link to={this.props.populares ? "ver/populares" : "ver/cartelera"}>  Ver todas las {this.props.populares ? "Peliculas Populares" : "Películas en cartelera"}</Link></h2>
 
             </React.Fragment>
 
