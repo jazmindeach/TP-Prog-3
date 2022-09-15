@@ -1,22 +1,23 @@
 form{
-    
     display: flex;
     justify-content: center;
     padding: 25px;
 }
 
 input{
-    width: 70%;
+    width: 20%;
     padding: 10px;
     border-radius: 20px;
+    margin-bottom: 40px;
 }
 
 #cargarmas{
     display: flex;
     justify-content: center;
-    padding: 25px;
-    
+    padding: 25px; 
+    height: 100px;
 }
+
 
 button{
     width: 20%; 
@@ -24,9 +25,18 @@ button{
 }
 
 
-/*
-.contenedor{
+body{
     background-color: black;
-} */
+}
+
+
+h1{
+    color:whitesmoke;
+    margin-top: 100px;
+    margin-left: 20px;
+    margin-bottom: 30px;  
+    text-align: center;
+    text-transform: uppercase;
+}
 
 

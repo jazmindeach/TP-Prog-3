@@ -1,9 +1,9 @@
 import React from "react"
-import {Link} from "react-router-dom"
+import { Link } from "react-router-dom"
 
-function Favoritos (){
+function Favoritos() {
     return (
-            <h1> Esta es la página de favoritos </h1>
+        <h1> Esta es la página de favoritos </h1>
 
     )
 }

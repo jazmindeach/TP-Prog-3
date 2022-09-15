@@ -76,14 +76,12 @@ class ListadoTodas extends Component {
 
         return (
             <React.Fragment>
-
+                
                 <h1> {this.props.populares ? "Peliculas Populares" : "Películas en cartelera"} </h1>
                 <form onSubmit={(event) => this.preventDefault(event)}>
                     <input placeholder="Buscar" onChange={(event => this.guardarCambios(event))} value={this.state.input} />
-
-
-
                 </form>
+
                 <section class="contenedor">
                     {mostrar === "Cargando" || mostrar === "No se encontraron resultados de búsqueda" ? <h4> {mostrar} </h4> :
 

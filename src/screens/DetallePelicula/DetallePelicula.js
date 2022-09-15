@@ -1,9 +1,9 @@
 import React from "react"
-import {Link} from "react-router-dom"
+import { Link } from "react-router-dom"
 
-function DetallePelicula (props){
+function DetallePelicula(props) {
     return (
-            <h1> Este es detalle de la pelicula con id {props.match.params.id} </h1>
+        <h1> Este es detalle de la pelicula con id {props.match.params.id} </h1>
 
     )
 }

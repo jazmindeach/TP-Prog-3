@@ -7,7 +7,14 @@
 }
 
 .unapelicula{
-    background-color: rgb(165, 151, 173);
+   /*background-color: rgb(141, 147, 160);*/
+   background-color: white;
+   padding: 7px;
+   border-radius:7px;
+   margin-left: 20px;
+   margin-right: 20px;
+   margin-bottom: 40px;
+   
 }
 
 .unapelicula img{

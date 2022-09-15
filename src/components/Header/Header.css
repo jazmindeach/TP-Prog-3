@@ -1,17 +1,29 @@
 nav{
     display: flex;
-    background-color: rgb(155, 188, 200);
+    /*background-color: rgb(155, 188, 200);*/
     align-items: center;
-    height: 150px;
-    color: rgb(39, 36, 36);
-    
-
+    height: 110px;
+    color: rgb(228, 23, 23);
+    background-color: rgba(138, 147, 197, 0.829);
+    text-transform: uppercase;
 }
+
 
 #links a{
         text-decoration: none;
         margin-right: 20px;
         font-size: 25px;
-
+        color:rgb(255, 255, 255);
 }
+
+.logo{
+    display: flex;
+    border-radius: 50%;
+    width: 80px;
+    height: 50px; 
+    margin: auto;
+    padding: 10px;
+}
+
+
 

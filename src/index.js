@@ -1,4 +1,4 @@
-import {BrowserRouter, Link, Route, Switch} from 'react-router-dom'
+import { BrowserRouter, Link, Route, Switch } from 'react-router-dom'
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 

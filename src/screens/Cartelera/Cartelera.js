@@ -1,10 +1,10 @@
 import React from "react"
-import {Link} from "react-router-dom"
+import { Link } from "react-router-dom"
 import ListadoTodas from "../../components/ListadoTodas/ListadoTodas"
 
-function Cartelera (){
+function Cartelera() {
     return (
-            <ListadoTodas populares={false} /> 
+        <ListadoTodas populares={false} />
     )
 }
 export default Cartelera
