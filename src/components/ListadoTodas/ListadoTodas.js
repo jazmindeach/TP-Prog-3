@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import UnaPelicula from '../UnaPelicula/UnaPelicula'
 import { Link } from 'react-router-dom'
 import "./ListadoTodas.css"
+import Loader from '../Loader/Loader'
 
 class ListadoTodas extends Component {
 
@@ -11,15 +12,17 @@ class ListadoTodas extends Component {
             datos: [],
             pageNumber: 1,
             input: "",
-            datosFiltrados: []
+            datosFiltrados: [],
+            cargando: true
         }
     }
     componentDidMount() {
         fetch(this.props.populares ? `https://api.themoviedb.org/3/movie/popular?api_key=627cbec155d5e3d21e03021421fffc3a&page=${this.state.pageNumber}` : `https://api.themoviedb.org/3/movie/now_playing?api_key=627cbec155d5e3d21e03021421fffc3a&page=${this.state.pageNumber}`)
             .then(response => response.json())
             .then(data => {
-                { this.setState({ datos: data.results, pageNumber: this.state.pageNumber + 1 }) }
-                console.log(data)
+                setTimeout(() => {
+                    { this.setState({ datos: data.results, pageNumber: this.state.pageNumber + 1, cargando: false }) }
+                }, 3000)
             })
             .catch(error => console.log('El error fue: ' + error))
     }
@@ -27,8 +30,9 @@ class ListadoTodas extends Component {
         fetch(this.props.populares ? `https://api.themoviedb.org/3/movie/popular?api_key=627cbec155d5e3d21e03021421fffc3a&page=${this.state.pageNumber}` : `https://api.themoviedb.org/3/movie/now_playing?api_key=627cbec155d5e3d21e03021421fffc3a&page=${this.state.pageNumber}`)
             .then(response => response.json())
             .then(data => {
-                { this.setState({ datos: this.state.datos.concat(data.results), pageNumber: this.state.pageNumber + 1 }) }
-
+                setTimeout(() => {
+                    { this.setState({ datos: this.state.datos.concat(data.results), pageNumber: this.state.pageNumber + 1, cargando: false }) }
+                }, 3000)
             })
             .catch(error => console.log('El error fue: ' + error))
     }
@@ -57,6 +61,10 @@ class ListadoTodas extends Component {
 
 
     render() {
+
+        if(this.state.cargando) {
+            return <Loader/>
+        }
 
         let mostrar = "Cargando"
         if (this.state.datos.length !== 0) {

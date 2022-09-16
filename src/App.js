@@ -8,7 +8,6 @@ import Populares from './screens/Populares/Populares';
 import Cartelera from './screens/Cartelera/Cartelera';
 import Favoritos from './screens/Favoritos/Favoritos';
 import DetallePelicula from './screens/DetallePelicula/DetallePelicula';
-import VerTodas form "./screens/VerTodas/VerTodas";
 
 function App() {
 
@@ -24,7 +23,6 @@ function App() {
           <Route path="/favoritos" component={Favoritos} exact={true} />
           <Route path="/detallePelicula/id/:id" component={DetallePelicula} />
           <Route path="" component={Notfound} />
-          <Route path="/ver/:tipo" component={VerTodas} />
 
         </Switch>
 

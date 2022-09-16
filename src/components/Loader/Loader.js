@@ -1,13 +1,11 @@
 import React from "react"
-import "./loader.css"
+import './loader.css'
 
-function Footer (){
+function Loader() {
     return (
-            <div> 
-               Cargando...
-            </div>
-
-
+      <div id="loader">
+        <div className="lds-ring"><div></div><div></div><div></div><div></div></div>
+      </div>
     )
 }
-export default Footer
+export default Loader
