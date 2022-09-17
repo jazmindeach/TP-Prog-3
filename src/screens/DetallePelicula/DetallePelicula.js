@@ -41,13 +41,14 @@ class DetallePelicula extends Component {
 
             if(datos == null) {
                 let peliculas = JSON.stringify([this.state.pelicula])
-                localStorage.setItem('peliculas', peliculas)
+                localStorage.setItem('peliculas', JSON.stringify(peliculas))
             }
             else {
+                
                 let peliculas = JSON.parse(datos)
-                console.log(peliculas);
+                peliculas.push(this.state.pelicula)
+                localStorage.setItem('peliculas', JSON.stringify(peliculas))
             }
-
             this.setState({
                 pelicula: this.state.pelicula, 
                 cargando: this.state.cargando,
