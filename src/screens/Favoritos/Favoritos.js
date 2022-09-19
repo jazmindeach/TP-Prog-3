@@ -34,7 +34,6 @@ class Favoritos extends Component {
     
             }
             </section>
-            <h1>{this.state.favoritos.length}</h1>
         </React.Fragment>
         )
     }

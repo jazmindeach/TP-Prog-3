@@ -24,8 +24,23 @@ class DetallePelicula extends Component {
             })
         .catch(error => console.log('El error fue: ' + error))
 
+        
 
         //buscar si ya la tengo en el local
+        let datos = localStorage.getItem('peliculas');
+
+        if(datos) {
+            let peliculas = JSON.parse(datos)
+            let buscarPelicula = peliculas.find(pelicula => pelicula.id == this.props.match.params.id)
+
+            if(buscarPelicula != null) {
+                this.setState({
+                    pelicula: this.state.pelicula, 
+                    cargando: this.state.cargando,
+                    agregado: true
+                })
+            }
+        }
 
     }
 
@@ -41,7 +56,7 @@ class DetallePelicula extends Component {
 
             if(datos == null) {
                 let peliculas = JSON.stringify([this.state.pelicula])
-                localStorage.setItem('peliculas', JSON.stringify(peliculas))
+                localStorage.setItem('peliculas', peliculas)
             }
             else {
                 
@@ -54,6 +69,20 @@ class DetallePelicula extends Component {
                 cargando: this.state.cargando,
                 agregado: true
             })
+
+            let eliminar = () => {
+
+                let datos = localStorage.getItem('peliculas');
+                let peliculas = JSON.parse(datos);
+                let favoritos = peliculas.filter(pelicula => pelicula.id != this.props.match.params.id)
+                localStorage.setItem('peliculas', JSON.stringify(favoritos));
+    
+                this.setState({
+                    pelicula: this.state.pelicula, 
+                    cargando: this.state.cargando,
+                    agregado: false
+                })
+            }
 
         }
 

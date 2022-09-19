@@ -18,7 +18,9 @@ class Listado extends Component {
             .then(response => response.json())
             .then(data => {
                 setTimeout(() => {
-                    { this.setState({ datos: data.results, cargando: false }) }
+                    { this.setState({ 
+                        datos: data.results.slice(0,8),
+                        cargando: false }) }
                 }, 3000)
             })
             .catch(error => console.log('El error fue: ' + error))

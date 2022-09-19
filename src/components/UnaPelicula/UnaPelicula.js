@@ -7,14 +7,38 @@ class UnaPelicula extends Component {
     constructor(props) {
         super(props)
         this.state = {
+            agregado: false,
             texto: "Ver más",
             clase: "oculto"
         }
     }
+
+
+    componentDidMount() {
+        //buscar si ya la tengo en el local
+        let datos = localStorage.getItem('peliculas');
+
+        if(datos) {
+            let peliculas = JSON.parse(datos)
+            let buscarPelicula = peliculas.find(pelicula => pelicula.id == this.props.info.id)
+
+            if(buscarPelicula != null) {
+                this.setState({
+                    agregado: true,
+                    texto: "Ver más",
+                    clase: "oculto"
+                })
+            }
+        }
+
+    }
+
     descripcion() {
+
         if (this.state.clase === "oculto") {
 
             this.setState({
+
                 texto: "Ver menos",
                 clase: "mostrar"
             })
@@ -29,7 +53,44 @@ class UnaPelicula extends Component {
 
     }
     render() {
-        console.log(this.props)
+
+        let agregar = () => {
+
+            let datos = localStorage.getItem('peliculas');
+
+            if(datos == null) {
+                let peliculas = JSON.stringify([this.props.info])
+                localStorage.setItem('peliculas', peliculas)
+            }
+            else {
+                let peliculas = JSON.parse(datos)
+                peliculas.push(this.props.info)
+                localStorage.setItem('peliculas', JSON.stringify(peliculas))
+            }
+
+            this.setState({
+                cargando: this.state.cargando,
+                agregado: true,
+                texto: "Ver más",
+                clase: "oculto"
+            })
+
+        }
+
+        let eliminar = () => {
+
+            let datos = localStorage.getItem('peliculas');
+            let peliculas = JSON.parse(datos);
+            let favoritos = peliculas.filter(pelicula => pelicula.id != this.props.info.id)
+            localStorage.setItem('peliculas', JSON.stringify(favoritos));
+
+            this.setState({
+                pelicula: this.state.pelicula, 
+                cargando: this.state.cargando,
+                agregado: false
+            })
+        }
+
         return (
             <React.Fragment>
                 <div className="unapelicula">
@@ -39,7 +100,10 @@ class UnaPelicula extends Component {
                     <div className="info">
                         <p className={this.state.clase}> {this.props.info.overview}</p>
                         <p id="descripcion" onClick={() => this.descripcion()}> {this.state.texto} </p>
-                        <p> Agregar a favoritos </p>
+                        {this.state.agregado 
+                            ? <button onClick={eliminar}>Eliminar de favoritos</button>
+                            : <button onClick={agregar}>Agregar a favoritos</button>
+                        }
                     </div>
                 </div>
             </React.Fragment>
