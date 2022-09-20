@@ -83,6 +83,7 @@ class UnaPelicula extends Component {
             let peliculas = JSON.parse(datos);
             let favoritos = peliculas.filter(pelicula => pelicula.id != this.props.info.id)
             localStorage.setItem('peliculas', JSON.stringify(favoritos));
+            this.props.actualizar(this.props.info.id)
 
             this.setState({
                 pelicula: this.state.pelicula, 
@@ -100,10 +101,12 @@ class UnaPelicula extends Component {
                     <div className="info">
                         <p className={this.state.clase}> {this.props.info.overview}</p>
                         <p id="descripcion" onClick={() => this.descripcion()}> {this.state.texto} </p>
+                        <div className="botones">
                         {this.state.agregado 
-                            ? <button onClick={eliminar}>Eliminar de favoritos</button>
-                            : <button onClick={agregar}>Agregar a favoritos</button>
+                            ? <button className="boton" onClick={eliminar}>Eliminar de favoritos</button>
+                            : <button className="boton" onClick={agregar}>Agregar a favoritos</button>
                         }
+                        </div>
                     </div>
                 </div>
             </React.Fragment>

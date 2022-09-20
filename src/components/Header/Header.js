@@ -13,7 +13,7 @@ function Header() {
 
             </div>
 
-            <div> <img className='logo' src='../img/logo.png' />  </div>
+            <div> <img className='logo' src='/img/logo.png' />  </div>
         </nav>
 
 

@@ -46,7 +46,7 @@ class Home extends Component {
             <React.Fragment>
                 <h1> Home </h1>
                 <form onSubmit={(event) => this.preventDefault(event)}>
-                    <input placeholder="Buscar" onChange={(event => this.guardarCambios(event))} value={this.state.input} />
+                    <input placeholder="Buscar" className="buscador" onChange={(event => this.guardarCambios(event))} value={this.state.input} />
                 </form>
                 <Listado populares={true} />
                 <Listado populares={false} />

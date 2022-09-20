@@ -21,6 +21,16 @@ class Favoritos extends Component {
             })
         }
     }
+
+    actualizar(id) {
+        let filtrados = this.state.favoritos.filter (favorito => favorito.id != id)
+            this.setState ({
+            favoritos: filtrados,
+            cargando:this.state.cargando
+        })
+    }
+
+
     render() {
         return (
            < React.Fragment >
@@ -30,12 +40,14 @@ class Favoritos extends Component {
             </form>
             <section className="contenedor"> 
             {
-                this.state.favoritos.map((unaPelicula, idx) => <UnaPelicula info={unaPelicula} key={idx} />)
+                this.state.favoritos.map((unaPelicula, idx) => <UnaPelicula info={unaPelicula} key={idx} actualizar={(id) => this.actualizar(id)}/>)
+
     
             }
             </section>
         </React.Fragment>
         )
     }
+
 }
 export default Favoritos

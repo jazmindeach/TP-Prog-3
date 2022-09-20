@@ -1,12 +1,15 @@
 nav{
     display: flex;
-    /*background-color: rgb(155, 188, 200);*/
+    background-color: rgb(155, 188, 200);
     align-items: center;
     height: 110px;
     color: rgb(228, 23, 23);
     background-color: rgba(138, 147, 197, 0.829);
     text-transform: uppercase;
+
+
 }
+
 
 
 #links a{
@@ -25,5 +28,15 @@ nav{
     padding: 10px;
 }
 
+@media screen and (max-width:320px) {
+    nav div {
+        width: 100%;
+    }
 
+    #links a{
+        display: block;
+        text-align:center;
+        font-size: 18px;
+    }
+}
 

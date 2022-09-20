@@ -18,3 +18,18 @@
     color: rgb(0, 0, 0);
     padding: 5px 10px 20px 10px;
   }
+
+  @media screen and (max-width:320px) {
+    #pelicula img{
+        width: 100%;
+    }
+    #pelicula div{
+        width: 100%;
+    }
+    #pelicula{
+        display: block;
+    }
+    #contenedor{
+        margin-top: 80px;
+    }
+}
