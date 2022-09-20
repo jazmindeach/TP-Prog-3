@@ -68,5 +68,17 @@
     #descripcion {
         width: 100%;
     }
-    
+
+    h1{
+        font-size: 18px;
+    }
+
+    h2{
+        width: 100%;
+    }
+    h2 a{
+        font-size: 15px;
+    }
+
+   
 }
